@@ -1,0 +1,144 @@
+@import "https://fonts.google.com/specimen/Public+Sans";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --violet: hsl(263, 55%, 52%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--Light-grayish-blue);
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.card-content h1 {
+  font-size: 20px;
+}
+.grid {
+  display: grid;
+  /* grid-template-columns: repeat(6, auto);
+  grid-template-rows: auto 1fr; */
+  gap: 20px;
+  margin-top: 40px;
+}
+.one {
+  background-color: var(--violet);
+  grid-column: span 4;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+}
+.one .card-header {
+  color: white;
+}
+.one .card-header p {
+  color: var(--Light-grayish-blue);
+  opacity: 0.6;
+  margin-top: 10px;
+}
+
+.card-header img {
+  border-radius: 30px;
+  width: 50px;
+}
+.card-name {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  padding: 40px;
+  border-radius: 20px;
+}
+.one .card-content h1 {
+  color: var(--white);
+}
+
+.one .card-content p {
+  color: var(--Light-grayish-blue);
+  opacity: 0.6;
+}
+
+.two {
+  background-color: var(--dark-grayish-blue);
+  grid-area: 1/5/2/6;
+}
+.two .card-header {
+  color: white;
+}
+.two .card-header p {
+  color: var(--Light-grayish-blue);
+  opacity: 0.6;
+  margin-top: 10px;
+}
+.two .card-content h1 {
+  color: var(--white);
+}
+
+.card-content p {
+  color: var(--Light-grayish-blue);
+  opacity: 0.6;
+}
+
+.four {
+  background: var(--dark-blackish-blue);
+  color: white;
+  grid-area: 2 /2 /3/6;
+}
+.five {
+  grid-area: 1/7/4/6;
+}
+.white {
+  background: white;
+}
+
+.white p {
+  color: var(--dark-grayish-blue);
+}
+
+@media (max-width: 992px) {
+  .grid {
+    display: block;
+  }
+  .one,
+  .two,
+  .four,
+  .five {
+    grid-area: unset;
+    margin: 20px 0;
+  }
+}
